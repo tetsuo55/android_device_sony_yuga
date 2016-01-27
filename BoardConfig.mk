@@ -35,7 +35,7 @@ GRAPHITE_OPTS := false
 ENABLE_GCCONLY := true
 
 # Healthd
-BACKLIGHT_PATH := /sys/class/leds/lm3533-lcd-bl/brightness
+BACKLIGHT_PATH := /sys/devices/i2c-0/0-0036/leds/lm3533-lcd-bl/brightness
 
 # Partition information
 BOARD_VOLD_MAX_PARTITIONS := 26
@@ -46,3 +46,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12828261888
 
 BOARD_HARDWARE_CLASS += device/sony/yuga/cmhw
+
+# TWRP
+TW_THEME := portrait_hdpi
+TW_BRIGHTNESS_PATH := /sys/devices/i2c-0/0-0036/leds/lm3533-lcd-bl/brightness
