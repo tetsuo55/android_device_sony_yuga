@@ -28,7 +28,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/yuga/bluetooth
 TARGET_KERNEL_CONFIG := sez_yuga_defconfig
 
 # Optimizations
-CLANG_O3 := true
+CLANG_O3 := false
 STRICT_ALIASING := false
 KRAIT_TUNINGS := true
 GRAPHITE_OPTS := false
