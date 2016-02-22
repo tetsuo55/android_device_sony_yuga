@@ -25,7 +25,7 @@ TARGET_SPECIFIC_HEADER_PATH += device/sony/yuga/include
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/yuga/bluetooth
 
-TARGET_KERNEL_CONFIG := sez_yuga_defconfig
+TARGET_KERNEL_CONFIG := fusion3_yuga_defconfig
 
 # Optimizations
 CLANG_O3 := false
