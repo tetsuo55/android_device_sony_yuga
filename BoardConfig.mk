@@ -1,4 +1,4 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,39 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from the common fusion3 definitions
-include device/sony/fusion3-common/BoardConfigCommon.mk
+include device/sony/fusion3-common/PlatformConfig.mk
 
-# inherit from the proprietary version
--include vendor/sony/yuga/BoardConfigVendor.mk
+TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := C6602,C6603,C6606,yuga
-
-TARGET_SPECIFIC_HEADER_PATH += device/sony/yuga/include
-
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/yuga/bluetooth
-
-TARGET_KERNEL_CONFIG := fusion3_yuga_defconfig
-
-# Optimizations
-CLANG_O3 := true
-STRICT_ALIASING := false
-KRAIT_TUNINGS := true
-GRAPHITE_OPTS := false
-ENABLE_GCCONLY := true
-
-# Healthd
-BACKLIGHT_PATH := /sys/devices/i2c-0/0-0036/leds/lm3533-lcd-bl/brightness
-
-# Partition sizes
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01400000
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12828261888
-
-BOARD_HARDWARE_CLASS += device/sony/yuga/cmhw
-
-# TWRP
-TW_THEME := portrait_hdpi
-TW_BRIGHTNESS_PATH := /sys/devices/i2c-0/0-0036/leds/lm3533-lcd-bl/brightness
+BOARD_KERNEL_CMDLINE += androidboot.hardware=yuga
+BOARD_KERNEL_CMDLINE += mem=1759M
